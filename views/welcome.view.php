@@ -1,10 +1,6 @@
 <?php require('partials/head.php'); ?>
 
-
-<?php require('partials/post-list.php'); ?>
-
-    
+    <h3><?php echo $message; ?></h3>
 
 
-    
 <?php require('partials/footer.php'); ?>

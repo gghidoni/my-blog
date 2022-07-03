@@ -60,8 +60,27 @@ class QueryBuilder {
             $statement->execute($parameters);
         } catch (Exception $e) {
             die($e->getMessage());
-        }
-        
-        
+        } 
     }
+
+    public function checkUsername($username) {
+        $statement = $this->pdo->prepare(
+            "select username
+            from authors 
+            ");
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_CLASS);
+        $count = 0;
+        foreach($results as $result){
+            if($result->username === $username){
+                $count++;
+            }
+        }
+        if($count > 0){
+            return true;
+        } else { return false; }
+    }
+
+
+
 }
