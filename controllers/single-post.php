@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 $idPost = intval(preg_replace('/[^0-9]/', '', $_SERVER['REQUEST_URI']));
 
 $singlePost = $app['database']->singlePost($idPost);

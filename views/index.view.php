@@ -3,6 +3,13 @@
 
 <?php require('partials/post-list.php'); ?>
 
+<?php if(isset($_SESSION['username'])) { ?>
+
+    <h3>inserimento post</h3>
+
+<?php } ?>
+
+
     
 
 

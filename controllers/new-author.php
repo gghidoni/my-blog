@@ -1,24 +1,24 @@
 <?php 
 
+session_start();
+
 $message = "";
 
-if($app['database']->checkUsername($_POST['username'])){
+if($app['database']->checkUsername($_POST['newUsername'])){
 
-    $message = 'Username not available!';
-    // $message['id'] = 0;    
+    $message = 'Username not available! <a href="login"><< Back</a>';    
 
 } else {
-
+    
     $app['database']->insert('authors', [
 
-        'username' => $_POST['username'],
-        'password' => $_POST['password']
+        'username' => $_POST['newUsername'],
+        'password' => password_hash($_POST['newPassword'], PASSWORD_DEFAULT)
     
     ]
     );
     
-    $message = "Welcome, {$_POST['username']}.";
-    // $message['id'] = 1;
+    $message = "Welcome {$_POST['newUsername']}, your account has been created. Please <a href='login'>Login >></a>";
 }
 
 

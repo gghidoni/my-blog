@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 $app['database']->insert('comments', [
 
     'textComment' => $_POST['textComment'],

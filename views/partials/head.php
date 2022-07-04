@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,11 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="about">About Page</a></li>
+            <?php if(!isset($_SESSION['username'])) { ?>
             <li><a href="login">Login</a></li>
+            <?php } else { ?>
+            <li><a href="logout">Logout</a></li>
+            <?php } ?>
+            
         </ul>
     </nav>

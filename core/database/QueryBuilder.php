@@ -78,7 +78,16 @@ class QueryBuilder {
         }
         if($count > 0){
             return true;
-        } else { return false; }
+        } else { return false; }                                          
+    }
+
+    public function login($user) {
+
+            $statement = $this->pdo->prepare('select * from authors where username=:username');
+            $statement->bindParam(':username', $user);
+            $statement->execute();     
+            return $statement->fetch(PDO::FETCH_ASSOC);
+
     }
 
 
