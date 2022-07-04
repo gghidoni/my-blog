@@ -1,4 +1,4 @@
-
+<!---- Posts List Partial   ---->
 <ul><?php  ?>
     
         <?php foreach($listPosts as $post) : ?>

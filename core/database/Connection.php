@@ -1,6 +1,6 @@
 <?php 
 
-// Connessione al DB
+// DB PDO connection
 
 class Connection {
     public static function make($config) {

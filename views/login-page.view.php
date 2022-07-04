@@ -1,6 +1,8 @@
+<!---- Login Page   ---->
+
 <?php require('partials/head.php'); ?>
 
-
+<!---- Login section   ---->
 <h3>Login</h3>
 
 <form method="POST" action="/login-author">
@@ -9,7 +11,7 @@
     <input type="submit" value="Login">
 </form>
 
-
+<!---- Register Page   ---->
 <h3>If you do not have an account, please register</h3>
 
 <form method="POST" action="/new-author">

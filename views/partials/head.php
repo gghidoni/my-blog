@@ -1,4 +1,4 @@
-
+<!---- Head Partial   ---->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="about">About Page</a></li>
+            <!---  if user is not logged in show login else logout --->
             <?php if(!isset($_SESSION['username'])) { ?>
             <li><a href="login">Login</a></li>
             <?php } else { ?>

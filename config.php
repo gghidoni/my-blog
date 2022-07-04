@@ -1,5 +1,6 @@
 <?php 
 
+// PDO configuration
 
 return [
     'database' => [

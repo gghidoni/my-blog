@@ -9,20 +9,21 @@ class QueryBuilder {
         $this->pdo = $pdo;
     }
 
-    // metodo per richiamare tutti i records di una query, la tabella è passata come parametro
+    // method to retrieve all the records of a query, the table is passed as a parameter
     public function selectAll($table) {
         $statement = $this->pdo->prepare("select * from {$table}");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    // retrieves all posts with author
     public function listPosts() {
         $statement = $this->pdo->prepare("select * from posts, authors where ksAuthor=idAuthor");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-
+    // retreives single post with all info
     public function singlePost($idPost) {
         $statement = $this->pdo->prepare(
             "select titlePost, contentPost, datePost, username, titleCategory
@@ -32,6 +33,7 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    // get tags of single post by id
     public function getTags($idPost) {
         $statement = $this->pdo->prepare(
             "select titleTag
@@ -41,6 +43,7 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    // get comments of single post by id
     public function getComments($idPost) {
         $statement = $this->pdo->prepare(
             "select textComment
@@ -50,6 +53,7 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    // Generic query for insert into a table
     public function insert($table, $parameters) {
         $sql = sprintf('insert into %s (%s) values (%s)',
                 $table, implode(', ', array_keys($parameters)),
@@ -63,6 +67,7 @@ class QueryBuilder {
         } 
     }
 
+    // check if username already existing
     public function checkUsername($username) {
         $statement = $this->pdo->prepare(
             "select username
@@ -81,6 +86,7 @@ class QueryBuilder {
         } else { return false; }                                          
     }
 
+    // select author by username and get all info
     public function login($user) {
 
             $statement = $this->pdo->prepare('select * from authors where username=:username');
