@@ -1,5 +1,10 @@
 <?php 
 
+/* 
+this file is called when adding a new comment from the single post page.
+*/
+
+
 // add new comment query
 $app['database']->insert('comments', [
 

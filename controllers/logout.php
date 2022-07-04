@@ -1,5 +1,10 @@
 <?php 
 
+/* 
+this file is called by the logout button on the navbar, 
+the session variables are unsetted
+*/
+
 session_start();
 
 // unset all Session variables

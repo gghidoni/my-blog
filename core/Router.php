@@ -1,5 +1,10 @@
 <?php 
 
+/*
+in this file the Router class is initialized, this class contains the methods 
+to manage the routing of the application.
+*/
+
 // Class Router for routing management
 
 class Router {

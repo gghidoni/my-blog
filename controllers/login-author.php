@@ -1,5 +1,11 @@
 <?php 
 
+/*
+this file is called when the login form is sent. You run the query, 
+check to see if it produces any results, verify your password, and establish a 
+session to store your login credentials.
+*/
+
 // get Author info from table
 $author = $app['database']->login($_POST['username']);
 

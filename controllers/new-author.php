@@ -1,5 +1,10 @@
 <?php 
 
+/* 
+this file is called up when registering a new author from the login page. 
+The username is checked and entered into the table.
+*/
+
 session_start();
 
 // initialized message

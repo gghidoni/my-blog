@@ -1,5 +1,10 @@
 <?php 
 
+/*
+boot file, with the require of all the necessary files and the setting of 
+the connection to the database.
+*/
+
 $app = [];
 $app['config'] = require 'config.php';
 

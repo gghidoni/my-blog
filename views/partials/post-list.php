@@ -1,4 +1,5 @@
-<!---- Posts List Partial   ---->
+<!---- Posts List section   ---->
+<h2>Posts list</h2>
 <ul><?php  ?>
     
         <?php foreach($listPosts as $post) : ?>

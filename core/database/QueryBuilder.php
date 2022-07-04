@@ -1,5 +1,10 @@
 <?php 
 
+/*
+in this file the QueryBuilder class is initialized, this class contains 
+all the methods to form sql queries to the database.
+*/
+
 // gestore di query dal db
 class QueryBuilder {
 
@@ -49,6 +54,12 @@ class QueryBuilder {
             "select textComment
             from posts, comments 
             where {$idPost}=idPost and comments.ksPost=idPost");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    public function getCategories() {
+        $statement = $this->pdo->prepare("select * from categories");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }

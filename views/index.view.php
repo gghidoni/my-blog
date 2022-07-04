@@ -7,8 +7,18 @@
 <!---- Add new post section   ---->
 
 <?php if(isset($_SESSION['username'])) { ?>
-
-    <h3>inserimento post</h3>
+    <h3>Add new post</h3>
+    <form method="POST" action="/new-post">
+        Title: <input type="text" name="titlePost">
+        Content: <input type="text" name="contentPost">
+        Category: <select name="ksCategory">
+            <?php foreach($categories as $category) : ?>
+                <option value="<?= $category->idCategory; ?>"><?= $category->titleCategory; ?></option>
+            <?php endforeach ?>
+                </select>
+        Tags: <input type="text" name="tags">
+        <input type="submit" value="Send">
+    </form>
 
 <?php } ?>
 

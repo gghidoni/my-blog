@@ -1,6 +1,8 @@
 
 <?php 
 
+// login page controller
+
 session_start();
 
 

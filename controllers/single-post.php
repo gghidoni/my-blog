@@ -1,5 +1,11 @@
 <?php 
 
+/* 
+this file is called up by clicking on the single post on 
+the index. The queries are initialized and single-post.view 
+is invoked.
+*/
+
 session_start();
 
 // Get post id from uri

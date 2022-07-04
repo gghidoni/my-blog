@@ -1,6 +1,6 @@
 <?php 
 
-// PDO configuration
+// in this file the settings for the PDO connection are initialized
 
 return [
     'database' => [

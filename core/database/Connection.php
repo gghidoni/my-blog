@@ -1,6 +1,9 @@
 <?php 
 
-// DB PDO connection
+/*
+in this file the connection class is initialized with the parameters 
+to set the pdo connection
+*/
 
 class Connection {
     public static function make($config) {

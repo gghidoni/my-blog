@@ -1,5 +1,10 @@
 <?php 
 
+/*
+in this file the Request class is initialized, this class contains the methods 
+that manipulate the uri and select the get or post method.
+*/
+
 class Request {
 
   // Handling uri
