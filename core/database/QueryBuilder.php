@@ -59,11 +59,6 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function getCategories() {
-        $statement = $this->pdo->prepare("select * from categories");
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS);
-    }
 
     // Generic query for insert into a table
     public function insert($table, $parameters) {
@@ -79,6 +74,7 @@ class QueryBuilder {
         } 
     }
 
+    // insert new post
     public function newPost($parameters){
         $idPost;
         try{

@@ -8,7 +8,7 @@ session_start();
 $listPosts = $app['database']->listPosts();
 
 // get categories for form
-$categories = $app['database']->getCategories();
+$categories = $app['database']->selectAll('categories');
 
 // get all tags for form
 $tags = $app['database']->selectAll("tags");

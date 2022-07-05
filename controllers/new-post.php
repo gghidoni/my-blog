@@ -2,7 +2,7 @@
 
 /*
 this file is called when you submit the form for inserting a new post. 
-A method of the QueryBuilder is used.
+Use a specific method of QueryBuilder.
 */
 
 
