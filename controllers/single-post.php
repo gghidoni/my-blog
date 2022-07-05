@@ -15,7 +15,7 @@ $idPost = intval(preg_replace('/[^0-9]/', '', $_SERVER['REQUEST_URI']));
 $singlePost = $app['database']->singlePost($idPost);
 
 // Get Tags by post id
-$tags = $app['database']->getTags($idPost);
+$tags = $app['database']->getTagsById($idPost);
 
 // Get comments by post id
 $comments = $app['database']->getComments($idPost);

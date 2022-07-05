@@ -8,6 +8,10 @@ the connection to the database.
 $app = [];
 $app['config'] = require 'config.php';
 
+
+// set timezone
+date_default_timezone_set('Europe/Rome');
+
 // requires the necessary files 
 require 'core/Router.php';
 require 'core/Request.php';

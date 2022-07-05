@@ -10,5 +10,6 @@ $router->get('login', 'controllers/login-page.php');
 $router->post('new-author', 'controllers/new-author.php');
 $router->post('login-author', 'controllers/login-author.php');
 $router->get('logout', 'controllers/logout.php');
+$router->post('new-post', 'controllers/new-post.php');
 
 

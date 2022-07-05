@@ -39,7 +39,7 @@ class QueryBuilder {
     }
 
     // get tags of single post by id
-    public function getTags($idPost) {
+    public function getTagsById($idPost) {
         $statement = $this->pdo->prepare(
             "select titleTag
             from posts, poststags, tags 
@@ -47,6 +47,7 @@ class QueryBuilder {
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
+
 
     // get comments of single post by id
     public function getComments($idPost) {
@@ -76,6 +77,42 @@ class QueryBuilder {
         } catch (Exception $e) {
             die($e->getMessage());
         } 
+    }
+
+    public function newPost($parameters){
+        $idPost;
+        try{
+
+            // insert title, content, date and category
+            $statement = $this->pdo->prepare(
+                'insert into posts (titlePost, contentPost, datePost, ksCategory, ksAuthor)
+                values (:titlePost, :contentPost, :datePost, :ksCategory, :ksAuthor)
+            ');
+            $statement->bindParam(':titlePost', $parameters['titlePost']);
+            $statement->bindParam(':contentPost', $parameters['contentPost']);
+            $statement->bindParam(':datePost', $parameters['datePost']);
+            $statement->bindParam(':ksCategory', $parameters['ksCategory']);
+            $statement->bindParam(':ksAuthor', $parameters['ksAuthor']);
+            $statement->execute();
+
+            // get last post ID
+            $idPost = $this->pdo->lastInsertId();
+
+            // Insert tags
+            foreach($parameters['idTags'] as $idTag) {
+                $statement = $this->pdo->prepare('insert into poststags (ksPost, ksTag) values (:ksPost, :ksTag)');
+                $statement->bindParam(':ksPost', $idPost);
+                $statement->bindParam(':ksTag', $idTag);
+                $statement->execute();
+            }
+            
+            
+        }  catch (Exception $e) {
+            die($e->getMessage());
+        }
+        
+
+
     }
 
     // check if username already existing
