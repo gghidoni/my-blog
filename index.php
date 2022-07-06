@@ -6,6 +6,7 @@
 */
  require 'core/boot.php';  
 
+use App\Core\{Router, Request};
 
 // Routing Management
 require Router::load('routes.php')->direct(Request::uri(), Request::method());

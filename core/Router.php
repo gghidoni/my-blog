@@ -5,6 +5,8 @@ in this file the Router class is initialized, this class contains the methods
 to manage the routing of the application.
 */
 
+namespace App\Core;
+
 // Class Router for routing management
 
 class Router {
